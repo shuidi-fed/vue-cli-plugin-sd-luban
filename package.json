@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "webpack": "^4.29.0"
+  },
+  "name": "vue-cli-plugin-sd",
+  "version": "0.0.2",
+  "description": "sd plugin for @vue/cli",
+  "main": "index.js",
+  "author": "tangruijia",
+  "license": "MIT"
+}
