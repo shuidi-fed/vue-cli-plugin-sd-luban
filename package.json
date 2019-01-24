@@ -3,7 +3,7 @@
     "webpack": "^4.29.0"
   },
   "name": "vue-cli-plugin-sd",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "sd plugin for @vue/cli",
   "main": "index.js",
   "author": "tangruijia",
