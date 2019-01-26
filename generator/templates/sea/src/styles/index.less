@@ -1,0 +1,201 @@
+@import './var.less';
+
+* {
+  margin:0;
+  padding: 0
+}
+
+h2{
+  font-size: 16px;
+  font-weight: normal;
+}
+
+html{
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: @light-gray;
+  // font-weight: 400;
+  // font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, STHeitiSC-Light, WOL_SB, 'Segoe UI Semibold', 'Segoe UI', Tahoma, Helvetica, sans-serif;
+}
+
+// 同el-card
+section {
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  color: #303133;
+  transition: .3s;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  padding: 20px;
+  // margin: 15px 0;
+}
+.blue {
+  color: @blue;
+}
+
+.success {
+  color: @success;
+}
+
+.warning {
+  color: @warning;
+}
+
+.danger {
+  color: @danger;
+}
+
+.info {
+  color: @info;
+}
+
+.big-words {
+  font-size: 18px;
+}
+
+.medium-words{
+  font-size: 16px;
+}
+
+.small-words {
+  font-size: 14px;
+}
+
+.mini-words {
+  font-size: 12px;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.pagination {
+  text-align: right;
+  margin-top: 15px;
+}
+
+.link {
+  cursor: pointer;
+  color: @blue;
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    color: fade(@blue, 80%);
+  }
+}
+
+.info-link {
+  cursor: pointer;
+  color: @info;
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    color: fade(@info, 80%);
+  }
+}
+
+.danger-link {
+  cursor: pointer;
+  color: @danger;
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    color: fade(@danger, 80%);
+  }
+}
+
+// 横向分割线
+.hr-hor {
+  height: 0;
+  border-top: 1px solid @light-gray;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+// 纵向分割线
+.hr-ver {
+  width: 0;
+  border-left: 1px solid @light-gray;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+// 搜索框
+.searcher {
+  padding-bottom: 10px;
+  padding-top: 15px;
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  > span {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #333;
+    white-space: nowrap;
+  }
+  >button,.btn-wrapper{
+    margin: 0 10px 10px 10px;
+  }
+  .input {
+    margin: 0 5px 5px 5px;
+    // 仅仅是输入框限制宽度
+    &.el-input:not(.el-date-editor){
+      width: 250px;
+    }
+  }
+  .input-short {
+    margin: 0 5px 5px 5px;
+    // 仅仅是输入框限制宽度
+    &.el-input:not(.el-date-editor){
+      width: 100px;
+    }
+  }
+}
+
+.dialog-footer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.disabled {
+  display: none;
+}
+
+section + section{
+  margin: 15px 0;
+}
+
+section + div{
+  margin: 15px 0;
+}
+
+// 按钮旁边如果有按钮，则加一个magin-left
+.btn-wrapper+button {
+  margin-left: 10px;
+}
+
+button+.btn-wrapper {
+  margin-left: 10px;
+}
+
+.btn-wrapper+.btn-wrapper {
+  margin-left: 10px;
+}
+
+// quill编辑器
+.ql-formats {
+  line-height: normal;
+}
+
+.ql-toolbar.ql-snow {
+  width: 700px;
+}
+
+//分页组件的位置样式
+.pagination-content {
+  margin: 20px;
+  text-align: right;
+}

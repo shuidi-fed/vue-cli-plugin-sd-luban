@@ -22,7 +22,6 @@ const alias = aliasProvider()
 console.log('alias:', alias)
 
 module.exports = (api, projectOptions) => {
-  console.log(api, projectOptions)
   api.chainWebpack(webpackConfig => {
     // 移除 prefetch 插件
     webpackConfig.plugins.delete('prefetch')
