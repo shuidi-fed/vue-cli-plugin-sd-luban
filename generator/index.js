@@ -6,8 +6,6 @@ module.exports = (api, options, rootOptions) => {
       "build": 'vue-cli-service build --modern',
     },
     dependencies: {
-      "vue-router": "^3.0.2",
-      "vuex": "^3.1.0",
       "axios": "^0.18.0",
       "element-ui": "^2.5.0",
       "lodash": "^4.17.11",
@@ -39,17 +37,20 @@ module.exports = (api, options, rootOptions) => {
       }
     },
   })
-
-  api.render('./templates/sea/', options)
-  console.log('vue-cli-pligin-sd version: 0.0.8')
+  console.log(options)
+  api.render('./templates/default/', options)
+  api.render(files => {
+    delete files['src/components/HelloWorld.vue']
+    delete files['public/favicon.ico']
+    delete files['src/views/Home.vue']
+    delete files['src/views/About.vue']
+    delete files['src/router.js']
+    delete files['src/store.js']
+  })
+  console.log('vue-cli-pligin-sd-sea version: 0.0.3')
   api.onCreateComplete(() => {
     // cd到该目录下
     shell.cd(api.resolve('./'))
-    // 清除vue-cli自带的favicon
-    shell.rm('./public/favicon.ico')
-    // 清除vue-cli自带的components,views
-    shell.rm('./src/components/*')
-    shell.rm('./src/views/*')
     // 检测是否安装git
     if (!shell.which('git')) {
       shell.echo('git not found')
