@@ -39,29 +39,7 @@ module.exports = (api, options, rootOptions) => {
       }
     },
   })
-  // const files = {
-  //   // dll
-  //   './sea-manifest.json': './templates/sea/sea-manifest.json',
-  //   // index
-  //   './public/index.html': './templates/sea/public/index.html',
-  //   // main
-  //   './src/main.js': './templates/sea/src/main.js',
-  //   // config
-  //   './src/config/constants.js': './templates/sea/src/config/constants.js',
-  //   // router
-  //   './src/router/index.js': './templates/sea/src/router/index.js',
-  //   './src/router/map.js': './templates/sea/src/router/map.js',
-  //   './src/router/name.js': './templates/sea/src/router/name.js',
-  //   // api
-  //   './src/api/index.js': './templates/sea/src/api/index.js',
-  //   // store
-  //   './src/store/index.js': './templates/sea/src/store/index.js',
-  //   // styles
-  //   './src/styles/index.less': './templates/sea/src/styles/index.less',
-  //   './src/styles/var.less': './templates/sea/src/styles/var.less',
-  //   // app
-  //   './src/App.vue': './templates/sea/src/App.vue',
-  // }
+
   api.render('./templates/sea/', options)
   console.log('vue-cli-pligin-sd version: 0.0.8')
   api.onCreateComplete(() => {
@@ -69,8 +47,9 @@ module.exports = (api, options, rootOptions) => {
     shell.cd(api.resolve('./'))
     // 清除vue-cli自带的favicon
     shell.rm('./public/favicon.ico')
-    // 清除vue-cli自带的components
+    // 清除vue-cli自带的components,views
     shell.rm('./src/components/*')
+    shell.rm('./src/views/*')
     // 检测是否安装git
     if (!shell.which('git')) {
       shell.echo('git not found')
