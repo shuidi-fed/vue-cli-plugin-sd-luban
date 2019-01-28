@@ -24,7 +24,7 @@ console.log('alias:', alias)
 module.exports = (api, projectOptions) => {
   api.chainWebpack(webpackConfig => {
     // 移除 prefetch 插件
-    webpackConfig.plugins.delete('prefetch')
+    // webpackConfig.plugins.delete('prefetch')
     // 自动生成alias
     Object.keys(alias).forEach(key => {
       webpackConfig.resolve.alias.set(key, alias[key])
