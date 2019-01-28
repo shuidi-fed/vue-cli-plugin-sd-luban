@@ -1,7 +1,7 @@
 {
-  "name": "vue-cli-plugin-sd",
-  "version": "0.0.8",
-  "description": "sd plugin for @vue/cli",
+  "name": "vue-cli-plugin-sd-sea",
+  "version": "0.0.1",
+  "description": "vue cli plugin for sd sea",
   "main": "index.js",
   "author": "tangruijia",
   "license": "MIT",
