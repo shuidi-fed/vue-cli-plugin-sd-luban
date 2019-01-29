@@ -37,8 +37,11 @@ module.exports = (api, options, rootOptions) => {
       }
     },
   })
-  console.log(options)
-  api.render('./templates/default/', options)
+  console.log(options, rootOptions)
+  api.render('./templates/default/', {
+    options,
+    rootOptions
+  })
   api.render(files => {
     delete files['src/components/HelloWorld.vue']
     delete files['public/favicon.ico']
@@ -47,7 +50,6 @@ module.exports = (api, options, rootOptions) => {
     delete files['src/router.js']
     delete files['src/store.js']
   })
-  console.log('vue-cli-pligin-sd-sea version: 0.0.3')
   api.onCreateComplete(() => {
     // cd到该目录下
     shell.cd(api.resolve('./'))
@@ -59,5 +61,6 @@ module.exports = (api, options, rootOptions) => {
     }
     // 安装submodule
     shell.exec('git submodule add git@git.shuiditech.com:frontend/sea/public-module.git src/seaPublic')
+    console.log('vue-cli-pligin-sd-sea version: 0.0.4')
   })
 }
