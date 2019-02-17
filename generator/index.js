@@ -4,6 +4,8 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage({
     scripts: {
       "build": 'vue-cli-service build --modern',
+      "doc:gen": 'vue-cli-service doc:gen',
+      "doc:dev": 'vuepress dev docs',
     },
     dependencies: {
       "axios": "^0.18.0",
@@ -15,6 +17,7 @@ module.exports = (api, options, rootOptions) => {
     devDependencies: {
       "less": "^3.0.4",
       "less-loader": "^4.1.0",
+      "vuepress": "1.0.0-alpha.38",
     },
     eslintConfig: {
       "root": true,
