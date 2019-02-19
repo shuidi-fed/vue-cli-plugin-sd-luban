@@ -3,8 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const process = require('process')
 const docGen = require('sd-doc-gen')
-// const shell = require('shelljs')
-// const vuepress = require('vuepress')
+const vuepress = require('vuepress')
 
 const root = process.cwd()
 
@@ -45,9 +44,11 @@ module.exports = (api, projectOptions) => {
     // 或返回通过 webpack-merge 合并的配置对象
   })
 
-  api.registerCommand('doc:gen', args => {
+  api.registerCommand('doc', args => {
     docGen(root)
-    // shell.exec('vuepress dev docs')
-    // vuepress.dev(path.join(root, 'docs'))
+    vuepress.dev(path.join(root, 'docs'), {
+      open: true,
+      theme: '@vuepress/default'
+    })
   })
 }
