@@ -1,12 +1,12 @@
 {
   "name": "vue-cli-plugin-sd-sea",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "vue cli plugin for sd sea",
   "main": "index.js",
   "author": "tangruijia",
   "license": "MIT",
   "dependencies": {
-    "sd-doc-gen": "^0.0.1",
+    "sd-doc-gen": "^0.0.2",
     "shelljs": "^0.8.3",
     "vuepress": "1.0.0-alpha.37",
     "webpack": "^4.29.0"

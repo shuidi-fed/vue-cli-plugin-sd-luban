@@ -6307,10 +6307,10 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-sd-doc-gen@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/sd-doc-gen/-/sd-doc-gen-0.0.1.tgz#90a2b7905fb1e0f6f2b1056a4c93bf966d396f78"
-  integrity sha512-d+RYFPCqknjwmTpOU6lCwQlioh/CNayU/SEbigEcmvRCIa/88LAkVHKr6WYzzIPHTW+xbtiSXKeiGdFdnkFL9w==
+sd-doc-gen@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/sd-doc-gen/-/sd-doc-gen-0.0.2.tgz#bec24bf4d1f5994b13b03951a7367dbeaf899984"
+  integrity sha512-Hqco63dXerHQsWHPqtU/R+WIGNN6unLKdloHNlCQBXULOBQ39JVXMvX5z+We4r5yc42N7BhpAw26ZsFjJ7I1gw==
   dependencies:
     "@vuese/markdown-render" "^2.0.3"
     "@vuese/parser" "^2.0.2"
