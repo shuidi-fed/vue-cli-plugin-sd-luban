@@ -2,19 +2,21 @@ const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const process = require('process')
+const docGen = require('sd-doc-gen')
+const vuepress = require('vuepress')
 
-const dir = process.cwd()
+const root = process.cwd()
 
 // 将src下的文件夹的名字都设为alias
 function aliasProvider() {
   const aliasObj = {
     'vue$': 'vue/dist/vue.esm.js',
-    '@': path.join(dir, 'src')
+    '@': path.join(root, 'src')
   }
-  fs.readdirSync(path.join(dir, 'src'))
-    .filter(fileName => fs.lstatSync(path.join(dir, 'src', fileName)).isDirectory())
+  fs.readdirSync(path.join(root, 'src'))
+    .filter(fileName => fs.lstatSync(path.join(root, 'src', fileName)).isDirectory())
     .forEach(fileName => {
-      aliasObj[fileName] = path.join(dir, 'src', fileName)
+      aliasObj[fileName] = path.join(root, 'src', fileName)
     })
   return aliasObj
 }
@@ -32,8 +34,8 @@ module.exports = (api, projectOptions) => {
     // dll插件
     webpackConfig.plugin('DllReferencePlugin')
       .use(webpack.DllReferencePlugin, [{
-        context: dir,
-        manifest: require(`${dir}/sea-manifest.json`)
+        context: root,
+        manifest: require(`${root}/sea-manifest.json`)
       }])
   })
 
@@ -42,7 +44,11 @@ module.exports = (api, projectOptions) => {
     // 或返回通过 webpack-merge 合并的配置对象
   })
 
-  api.registerCommand('test', args => {
-    // 注册 `vue-cli-service test`
+  api.registerCommand('doc', args => {
+    docGen(root)
+    vuepress.dev(path.join(root, 'docs'), {
+      open: true,
+      theme: '@vuepress/default'
+    })
   })
 }
