@@ -1,10 +1,7 @@
-import getMarked from './getMarked'
-import hash from './hash'
-import getHTML from './getHTML'
-import getCookie from './getCookie'
+import publicUtils from 'seaPublic/utils'
+const ownUtils = publicUtils.requireContextApi(require.context('./', true, /\.js$/), ['index.js'])
+
 export default {
-  getMarked,
-  hash,
-  getHTML,
-  getCookie,
+  ...publicUtils,
+  ...ownUtils
 }

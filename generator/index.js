@@ -13,6 +13,7 @@ module.exports = (api, options, rootOptions) => {
       "lodash": "^4.17.11",
       "moment": "^2.22.2",
       "sd-sea-sdk": "^0.2.3",
+      "qs": "^6.6.0",
     },
     devDependencies: {
       "less": "^3.0.4",
