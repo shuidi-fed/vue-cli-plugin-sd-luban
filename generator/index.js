@@ -1,9 +1,11 @@
 const shell = require('shelljs')
+const version = require('../package.json').version
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
     scripts: {
       "build": 'vue-cli-service build --modern',
+      "doc": 'vue-cli-service doc',
     },
     dependencies: {
       "axios": "^0.18.0",
@@ -61,6 +63,6 @@ module.exports = (api, options, rootOptions) => {
     }
     // 安装submodule
     shell.exec('git submodule add git@git.shuiditech.com:frontend/sea/public-module.git src/seaPublic')
-    console.log('vue-cli-pligin-sd-sea version: 0.0.4')
+    console.log(`vue-cli-pligin-sd-sea v${version}`)
   })
 }
