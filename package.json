@@ -1,23 +1,24 @@
 {
   "name": "vue-cli-plugin-sd-sea",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "vue cli plugin for sd sea",
   "main": "index.js",
   "author": "tangruijia",
   "license": "MIT",
   "dependencies": {
-    "sd-doc-gen": "^0.0.2",
+    "chalk": "^2.4.2",
+    "sd-doc-gen": "^0.0.3",
     "shelljs": "^0.8.3",
-    "vuepress": "1.0.0-alpha.37",
+    "vuepress": "1.0.0-alpha.39",
     "webpack": "^4.29.0"
   },
   "devDependencies": {
     "axios": "^0.18.0",
+    "dayjs": "^1.8.6",
     "element-ui": "^2.5.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "lodash": "^4.17.11",
-    "moment": "^2.24.0",
     "qs": "^6.6.0",
     "sd-sea-sdk": "^0.2.3"
   }
