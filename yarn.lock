@@ -783,7 +783,7 @@
     source-map "~0.6.1"
     vue-template-es2015-compiler "^1.8.2"
 
-"@vuepress/core@^1.0.0-alpha.37":
+"@vuepress/core@^1.0.0-alpha.39":
   version "1.0.0-alpha.39"
   resolved "https://registry.npmjs.org/@vuepress/core/-/core-1.0.0-alpha.39.tgz#0a1bd7d30e36baab279cbdd97ab5d830311f3e6a"
   integrity sha512-brniVm6ISHfKzLGeS9nCjZ1uu4M4ZDIYd1d9KhzlElSE8URJQVqQWAOQTv2Kk6kRpN+tbLPH+kRooSU5dlPj/Q==
@@ -894,7 +894,7 @@
     semver "^5.5.0"
     upath "^1.1.0"
 
-"@vuepress/theme-default@^1.0.0-alpha.37":
+"@vuepress/theme-default@^1.0.0-alpha.39":
   version "1.0.0-alpha.39"
   resolved "https://registry.npmjs.org/@vuepress/theme-default/-/theme-default-1.0.0-alpha.39.tgz#5638d04768f5b71c83c28f5a750374e8b3f949f4"
   integrity sha512-Qwyob+Ep4C8kZsiNUC/fNZ5Ayfd4mKftZAr3XvcRa58xc7PkP/dtzQ1alPNp3GTZaAXldwMxqRegmY7s6Vgf/Q==
@@ -2528,6 +2528,11 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.npmjs.org/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
+
+dayjs@^1.8.6:
+  version "1.8.6"
+  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.8.6.tgz#b7a8ccfef173dae03e83a05a58788c9dbe948a35"
+  integrity sha512-NLhaSS1/wWLRFy0Kn/VmsAExqll2zxRUPmPbqJoeMKQrFxG+RT94VMSE+cVljB6A76/zZkR0Xub4ihTHQ5HgGg==
 
 de-indent@^1.0.2:
   version "1.0.2"
@@ -4813,11 +4818,6 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moment@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.npmjs.org/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
-
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -6307,10 +6307,10 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-sd-doc-gen@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/sd-doc-gen/-/sd-doc-gen-0.0.2.tgz#bec24bf4d1f5994b13b03951a7367dbeaf899984"
-  integrity sha512-Hqco63dXerHQsWHPqtU/R+WIGNN6unLKdloHNlCQBXULOBQ39JVXMvX5z+We4r5yc42N7BhpAw26ZsFjJ7I1gw==
+sd-doc-gen@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/sd-doc-gen/-/sd-doc-gen-0.0.3.tgz#3163c1740e97483ddb994e16f900ad048de4da20"
+  integrity sha512-W7RJ8An3FuVJY1qictx8TjvQNIDh7ELVWHdu0g51fI3JL31a5m0SwM2YGD09iyV80sVVpObyVnrI84LCON9wkQ==
   dependencies:
     "@vuese/markdown-render" "^2.0.3"
     "@vuese/parser" "^2.0.2"
@@ -7319,13 +7319,13 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress@1.0.0-alpha.37:
-  version "1.0.0-alpha.37"
-  resolved "https://registry.npmjs.org/vuepress/-/vuepress-1.0.0-alpha.37.tgz#3a3a67926aae5df9897dac83ab46360bc2092db5"
-  integrity sha512-fCwa+3j295dXDfNIyoNPX7xOZoeIyHG04kSW32qeS4mjpx7aETYhVr7ME5Rg3bwros6q+Neunsj9UJvF7bsl2Q==
+vuepress@1.0.0-alpha.39:
+  version "1.0.0-alpha.39"
+  resolved "https://registry.npmjs.org/vuepress/-/vuepress-1.0.0-alpha.39.tgz#2d2a1e6baf2d7350d39d8922769db7c994597f43"
+  integrity sha512-8aI1zDCZD9OkJLMg3gSdKf7rP1yY0+CW88gfJ9Ge66XUyY/mNE9+JAqFA7y+6G/lhbfVedBss4SAFCBaL6AWBA==
   dependencies:
-    "@vuepress/core" "^1.0.0-alpha.37"
-    "@vuepress/theme-default" "^1.0.0-alpha.37"
+    "@vuepress/core" "^1.0.0-alpha.39"
+    "@vuepress/theme-default" "^1.0.0-alpha.39"
     cac "^6.3.9"
 
 watchpack@^1.5.0:

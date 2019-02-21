@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const chalk = require('chalk')
 const webpack = require('webpack')
 const process = require('process')
 const docGen = require('sd-doc-gen')
@@ -49,6 +50,16 @@ module.exports = (api, projectOptions) => {
     vuepress.dev(path.join(root, 'docs'), {
       open: true,
       theme: '@vuepress/default'
+    })
+  })
+  api.registerCommand('dll', args => {
+    webpack(require('./config/webpack.dll.conf'), (err, stats) => {
+      if (err) throw err
+      if (stats.hasErrors()) {
+        console.log(chalk.red('  Build failed with errors.\n'))
+        process.exit(1)
+      }
+      console.log(chalk.cyan('  Build complete.\n'))
     })
   })
 }

@@ -11,7 +11,7 @@ module.exports = (api, options, rootOptions) => {
       "axios": "^0.18.0",
       "element-ui": "^2.5.0",
       "lodash": "^4.17.11",
-      "moment": "^2.22.2",
+      "dayjs": "^1.8.6",
       "sd-sea-sdk": "^0.2.3",
       "qs": "^6.6.0",
     },
