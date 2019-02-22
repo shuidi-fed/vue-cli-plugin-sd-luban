@@ -2,7 +2,7 @@ import Vue from 'vue'
 import router from './router'
 // 插件
 import Api from 'seaPublic/plugins/Api'
-import MomentPlugin from 'seaPublic/plugins/MomentPlugin'
+import DayjsPlugin from 'seaPublic/plugins/DayjsPlugin'
 import StoragePlugin from 'seaPublic/plugins/StoragePlugin'
 import RegexPlugin from 'seaPublic/plugins/RegexPlugin'
 import GlobalConfig from 'seaPublic/plugins/GlobalConfig'
@@ -22,7 +22,7 @@ import ButtonWithPrompt from 'seaPublic/components/buttonWithPrompt'
 
 Vue.use(SeaSDKPlugin, router)
 Vue.use(Api)
-Vue.use(MomentPlugin)
+Vue.use(DayjsPlugin)
 Vue.use(StoragePlugin)
 Vue.use(GlobalConfig)
 Vue.use(RegexPlugin)

@@ -39,6 +39,7 @@ module.exports = (api, options, rootOptions) => {
         "parser": "babel-eslint"
       }
     },
+    "eslintIgnore": ["src/styles/*"],
   })
   console.log(options, rootOptions)
   api.render('./templates/default/', {
@@ -52,6 +53,7 @@ module.exports = (api, options, rootOptions) => {
     delete files['src/views/About.vue']
     delete files['src/router.js']
     delete files['src/store.js']
+    delete files['src/assets/logo.png']
   })
   api.onCreateComplete(() => {
     // cd到该目录下
