@@ -5,4 +5,4 @@
 <script>
 export default {
 }
-</scritp>
+</script>

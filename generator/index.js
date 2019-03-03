@@ -38,7 +38,7 @@ module.exports = (api, options, rootOptions) => {
     "eslintIgnore": ["src/styles/*"],
   })
   console.log(options, rootOptions)
-  api.render('./templates/default/', {
+  api.render('./templates/', {
     options,
     rootOptions
   })
@@ -48,7 +48,6 @@ module.exports = (api, options, rootOptions) => {
     delete files['src/views/Home.vue']
     delete files['src/views/About.vue']
     delete files['src/router.js']
-    delete files['src/store.js']
     delete files['src/assets/logo.png']
   })
 }
