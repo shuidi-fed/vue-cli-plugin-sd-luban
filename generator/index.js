@@ -47,6 +47,7 @@ module.exports = (api, options, rootOptions) => {
     delete files['public/favicon.ico']
     delete files['src/views/Home.vue']
     delete files['src/views/About.vue']
+    delete files['src/store.js']
     delete files['src/router.js']
     delete files['src/assets/logo.png']
   })
