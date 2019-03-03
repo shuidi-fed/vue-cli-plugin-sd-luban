@@ -1,25 +1,19 @@
 {
-  "name": "vue-cli-plugin-sd-sea",
-  "version": "0.0.9",
-  "description": "vue cli plugin for sd sea",
+  "name": "vue-cli-plugin-sd-luban",
+  "version": "0.0.1",
+  "description": "vue cli plugin for sd luban",
   "main": "index.js",
-  "author": "tangruijia",
+  "author": "jiwenbing",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
-    "sd-doc-gen": "^0.0.3",
     "shelljs": "^0.8.3",
-    "vuepress": "1.0.0-alpha.39",
     "webpack": "^4.29.0"
   },
   "devDependencies": {
     "axios": "^0.18.0",
-    "dayjs": "^1.8.6",
-    "element-ui": "^2.5.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "lodash": "^4.17.11",
-    "qs": "^6.6.0",
-    "sd-sea-sdk": "^0.2.3"
+    "qs": "^6.6.0"
   }
 }

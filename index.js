@@ -3,8 +3,6 @@ const path = require('path')
 const chalk = require('chalk')
 const webpack = require('webpack')
 const process = require('process')
-const docGen = require('sd-doc-gen')
-const vuepress = require('vuepress')
 
 const root = process.cwd()
 
@@ -22,7 +20,6 @@ function aliasProvider() {
   return aliasObj
 }
 const alias = aliasProvider()
-console.log('alias:', alias)
 
 module.exports = (api, projectOptions) => {
   api.chainWebpack(webpackConfig => {
@@ -32,34 +29,10 @@ module.exports = (api, projectOptions) => {
     Object.keys(alias).forEach(key => {
       webpackConfig.resolve.alias.set(key, alias[key])
     })
-    // dll插件
-    webpackConfig.plugin('DllReferencePlugin')
-      .use(webpack.DllReferencePlugin, [{
-        context: root,
-        manifest: require(`${root}/sea-manifest.json`)
-      }])
   })
 
   api.configureWebpack(webpackConfig => {
     // 修改 webpack 配置
     // 或返回通过 webpack-merge 合并的配置对象
-  })
-
-  api.registerCommand('doc', args => {
-    docGen(root)
-    vuepress.dev(path.join(root, 'docs'), {
-      open: true,
-      theme: '@vuepress/default'
-    })
-  })
-  api.registerCommand('dll', args => {
-    webpack(require('./config/webpack.dll.conf'), (err, stats) => {
-      if (err) throw err
-      if (stats.hasErrors()) {
-        console.log(chalk.red('  Build failed with errors.\n'))
-        process.exit(1)
-      }
-      console.log(chalk.cyan('  Build complete.\n'))
-    })
   })
 }

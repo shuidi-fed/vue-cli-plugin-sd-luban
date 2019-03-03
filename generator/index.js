@@ -5,14 +5,10 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage({
     scripts: {
       "build": 'vue-cli-service build --modern',
-      "doc": 'vue-cli-service doc',
     },
     dependencies: {
       "axios": "^0.18.0",
-      "element-ui": "^2.5.0",
       "lodash": "^4.17.11",
-      "dayjs": "^1.8.6",
-      "sd-sea-sdk": "^0.2.3",
       "qs": "^6.6.0",
     },
     devDependencies: {
@@ -54,18 +50,5 @@ module.exports = (api, options, rootOptions) => {
     delete files['src/router.js']
     delete files['src/store.js']
     delete files['src/assets/logo.png']
-  })
-  api.onCreateComplete(() => {
-    // cd到该目录下
-    shell.cd(api.resolve('./'))
-    // 检测是否安装git
-    if (!shell.which('git')) {
-      shell.echo('git not found')
-      shell.exit(1)
-      return
-    }
-    // 安装submodule
-    shell.exec('git submodule add git@git.shuiditech.com:frontend/sea/public-module.git src/seaPublic')
-    console.log(`vue-cli-pligin-sd-sea v${version}`)
   })
 }
