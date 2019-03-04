@@ -1,5 +1,3 @@
-const shell = require('shelljs')
-const version = require('../package.json').version
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
@@ -49,6 +47,8 @@ module.exports = (api, options, rootOptions) => {
     delete files['src/views/About.vue']
     delete files['src/store.js']
     delete files['src/router.js']
+    delete files['src/main.js']
+    delete files['src/App.vue']
     delete files['src/assets/logo.png']
   })
 }
