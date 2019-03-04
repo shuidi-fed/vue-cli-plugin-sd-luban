@@ -1,0 +1,28 @@
+[
+  {
+    "blockName": "文案设置",
+    "settings": {
+      "context": {
+        "type": "input",
+        "require": true,
+        "label": "按钮文案"
+      },
+      "style.textAlign": {
+        "type": "align",
+        "require": false,
+        "label": "布局方式"
+      }
+    }
+  },
+  {
+    "blockName": "基础功能设置",
+    "settings": {
+      "href": {
+        "type": "input",
+        "require": false,
+        "label": "点击后跳转的链接"
+      }
+    }
+  }
+]
+

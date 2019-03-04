@@ -1,6 +1,7 @@
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
+    private: "false",
     scripts: {
       "build": 'vue-cli-service build --modern',
     },
@@ -13,6 +14,7 @@ module.exports = (api, options, rootOptions) => {
       "less": "^3.0.4",
       "less-loader": "^4.1.0",
     },
+    main: "./src/index.js",
     eslintConfig: {
       "root": true,
       "env": {

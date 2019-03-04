@@ -1,0 +1,17 @@
+{
+  "name": "sd-luban-text",
+  "className": "block",
+  "type": "basic",
+  "description": "文本",
+  "data": {
+    "context": "hello node",
+    "type": "success",
+    "size": "large",
+    "style": {
+      "container": {
+        "textAlign": "center"
+      }
+    }
+  }
+}
+

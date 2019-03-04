@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-sd-luban",
-  "version": "0.0.11",
+  "version": "0.0.21",
   "description": "vue cli plugin for sd luban",
   "main": "index.js",
   "repository": "git@git.shuiditech.com:frontend/luban/vue-cli-plugin-sd-luban.git",
