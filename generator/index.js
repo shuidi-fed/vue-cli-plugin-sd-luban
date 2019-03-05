@@ -4,6 +4,7 @@ module.exports = (api, options, rootOptions) => {
     private: false,
     scripts: {
       "build": 'vue-cli-service build --modern',
+      "publish": "node ./bin/publish.js",
     },
     dependencies: {
       "axios": "^0.18.0",
