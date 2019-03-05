@@ -2,10 +2,12 @@ const chalk = require('chalk')
 const process = require('child_process')
 const fs = require('fs')
 const ajax = require('./ajax')
+const git = require('./git')
 
 let pChild
 let serveProcess
 
+/*
 ajax.post('/api/cf/v4/get-funding-info', {
   infoUuid: '6fea63ee-fdcf-4a07-bbae-8b413ad7c7bd',
 }).then((data) => {
@@ -15,8 +17,8 @@ ajax.post('/api/cf/v4/get-funding-info', {
     chalk.red.bold(err)
   )
 })
+*/
 
-/*
 const publishNpm = () => {
   process.exec('npm publish')
   console.log(chalk.green.bold(`npm发布成功`))
@@ -39,7 +41,6 @@ const start = () => {
 }
 
 start()
-*/
 
 
 /* 读取config文件
