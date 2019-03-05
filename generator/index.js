@@ -1,7 +1,7 @@
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
-    private: "false",
+    private: false,
     scripts: {
       "build": 'vue-cli-service build --modern',
     },
@@ -9,6 +9,9 @@ module.exports = (api, options, rootOptions) => {
       "axios": "^0.18.0",
       "lodash": "^4.17.11",
       "qs": "^6.6.0",
+      "child_process": "^1.0.2",
+      "cos-nodejs-sdk-v5": "^2.5.6",
+      "puppeteer": "^1.12.2",
     },
     devDependencies: {
       "less": "^3.0.4",
