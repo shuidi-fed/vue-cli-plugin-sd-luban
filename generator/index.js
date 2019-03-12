@@ -4,7 +4,7 @@ module.exports = (api, options, rootOptions) => {
     private: false,
     scripts: {
       "build": "node ./build.js",
-      "publish": "node ./bin/publish.js",
+      "upload": "node ./bin/publish.js",
     },
     dependencies: {
       "axios": "^0.18.0",

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App'
-import SdLubanText from '../src/index'
+import component from '../src/index'
 
-Vue.use(SdLubanText)
+Vue.use(component)
 
 /* eslint-disable no-new */
 new Vue({

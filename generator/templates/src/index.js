@@ -2,11 +2,11 @@
  * @author jiwenbing
  * Date: 2019/3/4
  */
-import SdLubanText from './SdLubanText.vue'
+import component from './component.vue'
 
-SdLubanText.install = function (Vue) {
-  Vue.component(SdLubanText.name, SdLubanText)
+component.install = function (Vue) {
+  Vue.component(component.name, component)
 }
 
-export default SdLubanText
+export default component
 

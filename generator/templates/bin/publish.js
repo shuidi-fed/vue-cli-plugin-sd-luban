@@ -21,9 +21,9 @@ const isPublishNpmSuccess = () => {
 
 const start = async () => {
   // 发布npm
-  // if (!isPublishNpmSuccess()) {
-  //   return
-  // }
+  if (!isPublishNpmSuccess()) {
+    return
+  }
   let config = await getConfig()
   config = Object.keys(config).map(value => config[value])
 
