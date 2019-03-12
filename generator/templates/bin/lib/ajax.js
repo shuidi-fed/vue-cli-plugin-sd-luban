@@ -1,8 +1,8 @@
 const Axios = require('axios')
 const qs = require('qs')
 
-var ajax = Axios.create({
-  baseURL:'https://api.shuidichou.com',
+const ajax = Axios.create({
+  baseURL:'http://127.0.0.1:3000',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
   }
@@ -13,4 +13,12 @@ ajax.interceptors.request.use((config) => {
   return config
 })
 
-module.exports = ajax
+const list = {
+  addOrUpdateByName: '/api/component/addOrUpdateByName',
+  getConfig: '/api/config/get'
+}
+
+module.exports = {
+  ajax,
+  list
+}

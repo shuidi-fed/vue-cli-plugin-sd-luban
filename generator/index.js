@@ -3,7 +3,7 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage({
     private: false,
     scripts: {
-      "build": 'vue-cli-service build --modern',
+      "build": "node ./build.js",
       "publish": "node ./bin/publish.js",
     },
     dependencies: {

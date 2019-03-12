@@ -1,39 +1,55 @@
 const chalk = require('chalk')
+const shell = require('shelljs')
 const process = require('child_process')
-const fs = require('fs')
-const ajax = require('./ajax')
-const git = require('./git')
+const getConfig = require('./lib/getConfig.js')
+const uploadComponentInfo = require('./uploadComponentInfo.js')
+const uploadFile = require('./lib/uploadFile.js')
+const projecName = require('../package.json').name;
 
 let pChild
 let serveProcess
 
-/*
-ajax.post('/api/cf/v4/get-funding-info', {
-  infoUuid: '6fea63ee-fdcf-4a07-bbae-8b413ad7c7bd',
-}).then((data) => {
-  console.log(data)
-}).catch((err) => {
-  console.log(
-    chalk.red.bold(err)
-  )
-})
-*/
+// 发布npm
+const isPublishNpmSuccess = () => {
+  if (shell.exec('npm publish').code === 0) {
+    return true
+  }
 
-const publishNpm = () => {
-  process.exec('npm publish')
-  console.log(chalk.green.bold(`npm发布成功`))
+  console.log(chalk.red.bold('npm组件发布失败,请重试!'))
+  return false
 }
 
-const start = () => {
+const start = async () => {
   // 发布npm
-  publishNpm()
+  // if (!isPublishNpmSuccess()) {
+  //   return
+  // }
+  let config = await getConfig()
+  config = Object.keys(config).map(value => config[value])
 
   // 创建截图进程
-  pChild = process.fork('./bin/puppeteer.js')
+  pChild = process.fork('./bin/lib/puppeteer.js', config )
+
   // 监听子进程截图完成消息，并kill devserve进程
-  pChild.on('message', function (fileUrl) {
-    console.log(chalk.green.bold(`图片上传成功，地址:${fileUrl}`))
-    serveProcess.kill()
+  pChild.on('message', function (imgUrl) {
+
+    shell.exec('npm run build')
+
+    uploadFile({
+      SecretId: config[0],
+      SecretKey: config[1],
+      Bucket: config[2],
+      Region: config[3]
+    }, {
+      Key: `/js/comoponent-${new Date().getTime()}.js`,
+      FilePath: `./dist/${projecName}.umd.min.js`
+    }, ({ Location }) => {
+      // 存储组件信息
+      uploadComponentInfo(imgUrl, `https://${Location}`)
+      console.log(chalk.green.bold(`文件上传成功`))
+
+      serveProcess.kill()
+    })
   })
 
   // 执行run serve
@@ -41,12 +57,3 @@ const start = () => {
 }
 
 start()
-
-
-/* 读取config文件
-let componentConfig = fs.readFileSync('./config/index.json', 'utf8');
-console.log(JSON.parse(componentConfig));
-let editorConfig = fs.readFileSync('./config/editor.json', 'utf8');
-console.log(JSON.parse(editorConfig));
-*/
-
