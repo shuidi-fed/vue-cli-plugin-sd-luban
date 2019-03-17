@@ -4,18 +4,19 @@ const process = require('child_process')
 const getConfig = require('./lib/getConfig.js')
 const uploadComponentInfo = require('./uploadComponentInfo.js')
 const uploadFile = require('./lib/uploadFile.js')
-const projecName = require('../package.json').name;
+let projecName = require('../package.json').name;
+projecName = projecName.includes('/') ? projecName.split('/')[1] : projecName
 
 let pChild
 let serveProcess
 
 // 发布npm
 const isPublishNpmSuccess = () => {
-  if (shell.exec('npm publish').code === 0) {
+  if (shell.exec('snpm publish').code === 0) {
     return true
   }
 
-  console.log(chalk.red.bold('npm组件发布失败,请重试!'))
+  console.log(chalk.red.bold('snpm组件发布失败,请重试!'))
   return false
 }
 

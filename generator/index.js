@@ -1,6 +1,7 @@
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
+    name: '@sd-luban/XXX',
     private: false,
     scripts: {
       "build": "node ./build.js",
