@@ -2,7 +2,7 @@ const Axios = require('axios')
 const qs = require('qs')
 
 const ajax = Axios.create({
-  baseURL:'http://127.0.0.1:3000',
+  baseURL:'https://luban.shuiditech.com',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
   }
