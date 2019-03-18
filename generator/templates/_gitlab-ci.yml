@@ -1,0 +1,63 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+cache:
+    paths:
+        - node_modules/
+        - dist/
+
+.namespace: &namespace
+    only:
+        - zelda
+        - pokemon
+        - mario
+        - canary
+        - master
+
+.user: &user
+    only:
+        - /^issue#.*$/
+        - /^milestones#.*$/
+
+.install_package: &install_package
+    stage: build
+    retry: 2
+    before_script:
+        - yarn install
+        - yarn build
+
+.pull_image: &pull_image
+    stage: deploy
+    before_script:
+        - bash ~/deploy/run.sh --pull $images
+
+stages:
+    - build
+    - deploy
+
+build.namespace:
+    <<: *namespace
+    <<: *install_package
+    script:
+        - bash ~/deploy/run.sh --create-namespace
+        - bash ~/deploy/run.sh --tag
+
+build.user:
+    <<: *user
+    <<: *install_package
+    script:
+        - bash ~/deploy/run.sh --create-user
+
+run.namespace:
+    <<: *namespace
+    <<: *pull_image
+    script:
+        - bash ~/deploy/run.sh --check-namespace $CI_COMMIT_REF_NAME
+        - bash ~/deploy/run.sh --run-namespace $images $CI_COMMIT_REF_NAME
+
+run.user:
+    <<: *user
+    <<: *pull_image
+    script:
+        - bash ~/deploy/run.sh --check-user $GITLAB_USER_LOGIN
+        - bash ~/deploy/run.sh --run-user $images $GITLAB_USER_LOGIN
+
