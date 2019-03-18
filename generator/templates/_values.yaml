@@ -1,6 +1,0 @@
-app:
-  type: nginx
-  server:
-    address: www.shuidichou.com www.sdbao.com www.shuidihuzhu.com
-    port: 80
-    path: /
