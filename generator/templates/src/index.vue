@@ -1,9 +1,9 @@
 <template>
-  <div :style="data.style">{{data.context}}</div>
+  <img :src="data.src" :style="data.style" @click="toLink"/>
 </template>
 <script>
 export default {
-  name: 'SdLubanText',
+  name: 'common-image',
   props: {
     data: {
       type: Object,
@@ -18,3 +18,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+img {
+  display: block;
+}
+</style>
+

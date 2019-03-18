@@ -1,17 +1,12 @@
 {
-  "name": "sd-luban-text",
-  "className": "block",
-  "type": "basic",
-  "description": "文本",
+  "name": "@sd-luban/common-image",
+  "bizType": 1,
+  "description": "图片",
   "data": {
-    "context": "hello node",
-    "type": "success",
-    "size": "large",
+    "src": "http://cf-images.oss-cn-shanghai.aliyuncs.com/logo.png",
     "style": {
-      "container": {
-        "textAlign": "center"
-      }
-    }
+      "width": "100%"
+    },
+    "href": ""
   }
 }
-

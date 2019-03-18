@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <sd-luban-text :data="data"></sd-luban-text>
+    <common-image :data="data"></common-image>
   </div>
 </template>
 <script>
@@ -8,13 +8,10 @@ export default {
   data() {
     return {
       data: {
+        src: 'http://cf-images.oss-cn-shanghai.aliyuncs.com/logo.png',
         style: {
-          textAlign: 'center',
-          color: '#f90',
-          fontSize: '40px',
-          background: '#000'
-        },
-        context: 'test'
+          width: '100%'
+        }
       }
     }
   }
@@ -26,4 +23,3 @@ export default {
   padding: 0;
 }
 </style>
-
