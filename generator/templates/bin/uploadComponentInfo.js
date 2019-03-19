@@ -12,6 +12,12 @@ module.exports = (imgFile, jsFile) => {
     componentConfig.img = imgFile
     componentConfig.editor = editorConfig
     componentConfig.jsSrc = jsFile
+    // 默认写死h5
+    componentConfig.platform = 0
+    // 是否是公共组件
+    componentConfig.isPublic = componentConfig.isPublic || 0
+    // 是否是交互组件
+    componentConfig.category = componentConfig.category || 0
 
     ajax.post(list.addOrUpdateByName, {
       name: componentConfig.name,
