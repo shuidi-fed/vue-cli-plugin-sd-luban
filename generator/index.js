@@ -13,7 +13,7 @@ module.exports = (api, options, rootOptions) => {
       "qs": "^6.6.0",
       "child_process": "^1.0.2",
       "cos-nodejs-sdk-v5": "^2.5.6",
-      "puppeteer": "^1.12.2",
+      "puppeteer-cn": "^0.1.8",
     },
     devDependencies: {
       "less": "^3.0.4",

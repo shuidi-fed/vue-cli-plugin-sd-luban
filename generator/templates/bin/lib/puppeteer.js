@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-cn');
 const uploadFile = require('./uploadFile.js')
 
 let browser
