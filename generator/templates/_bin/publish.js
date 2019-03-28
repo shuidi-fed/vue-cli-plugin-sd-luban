@@ -71,8 +71,8 @@ const builds = {
     process.execSync(`mkdir -p ${builds.distDir}`)
     process.execSync(`rsync -av --exclude node_modules ./ ${builds.distDir}`)
 
-    process.execSync('git config --local user.email "jiwenbing88@126.com" && git config --local user.name "luban"', { cwd: builds.distDir })
     process.execSync(`git init && git add ${builds.distDir}/. && git commit -m 'init'`, { cwd: builds.distDir })
+    process.execSync('git config --local user.email "jiwenbing88@126.com" && git config --local user.name "luban"', { cwd: builds.distDir })
     process.exec(`git remote add origin https://git.shuiditech.com/luban-components/${projecName}.git`, { cwd: builds.distDir }, () => {
       process.exec('git pull origin master --allow-unrelated-histories', { cwd: builds.distDir }, () => {
         process.exec('git push --set-upstream origin master', { cwd: builds.distDir }, () => {
@@ -105,14 +105,13 @@ const builds = {
     config = Object.keys(config).map(value => config[value])
 
     // 如果包含自定义图片，就不需要截图功能
-    console.log(builds.isHasImg)
     if (builds.isHasImg) {
       builds.uploadConfig(config)
       return
     }
 
     // 创建截图进程
-    pChild = process.fork('./bin/lib/puppeteer.js', config )
+    pChild = process.fork('./.bin/lib/puppeteer.js', config )
     // 监听子进程截图完成消息，并kill devserve进程
     pChild.on('message', function (imgUrl) {
       builds.uploadConfig(config, imgUrl)
