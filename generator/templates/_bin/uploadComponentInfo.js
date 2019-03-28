@@ -4,12 +4,12 @@ const { ajax, list } = require('./lib/ajax')
 
 module.exports = (imgFile, jsFile) => {
   // 读取config文件
-  let componentConfig = fs.readFileSync('./config/index.json', 'utf8');
-  let editorConfig = fs.readFileSync('./config/editor.json', 'utf8');
+  let componentConfig = fs.readFileSync('./config/index.json', 'utf8')
+  let editorConfig = fs.readFileSync('./config/editor.json', 'utf8')
 
   try {
     componentConfig = JSON.parse(componentConfig)
-    componentConfig.img = imgFile
+    componentConfig.img = componentConfig.img || imgFile
     componentConfig.editor = editorConfig
     componentConfig.jsSrc = jsFile
     // 默认写死h5
@@ -37,4 +37,3 @@ module.exports = (imgFile, jsFile) => {
     )
   }
 }
-

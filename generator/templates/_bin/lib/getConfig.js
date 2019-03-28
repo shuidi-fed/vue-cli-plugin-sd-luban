@@ -5,4 +5,3 @@ module.exports = async () => {
 
   return config.data.data
 }
-

@@ -4,8 +4,8 @@ module.exports = (api, options, rootOptions) => {
     name: '@sd-luban/XXX',
     private: false,
     scripts: {
-      "build": "node ./build.js",
-      "upload": "node ./bin/publish.js",
+      "build": "node ./.bin/build.js",
+      "upload": "node ./.bin/publish.js",
     },
     dependencies: {
       "axios": "^0.18.0",
