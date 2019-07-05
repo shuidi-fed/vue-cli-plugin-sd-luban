@@ -47,51 +47,7 @@ const builds = {
     })
   },
   build: () => {
-    builds.createGitRemote(() => {
-      builds.start()
-    })
-  },
-
-  // build target
-  distDir: `${os.homedir()}/.luban-components/${projecName}/`,
-  // 推送git
-  createGitRemote: async (callback) => {
-
-    // 是否包含该目录
-    if (await builds.existOrNot(builds.distDir)) {
-      process.execSync('git config --local user.email "jiwenbing88@126.com" && git config --local user.name "luban"', { cwd: builds.distDir })
-      process.execSync(`rsync -av --exclude node_modules ./ ${builds.distDir}`)
-      process.exec(`git add ${builds.distDir}/. && git commit -m 'init'`, { cwd: builds.distDir }, () => {
-        process.execSync('git push --set-upstream origin master', { cwd: builds.distDir })
-        callback()
-      })
-      return
-    }
-
-    process.execSync(`mkdir -p ${builds.distDir}`)
-    process.execSync(`rsync -av --exclude node_modules ./ ${builds.distDir}`)
-
-    process.execSync(`git init && git add ${builds.distDir}/. && git commit -m 'init'`, { cwd: builds.distDir })
-    process.execSync('git config --local user.email "jiwenbing88@126.com" && git config --local user.name "luban"', { cwd: builds.distDir })
-    process.exec(`git remote add origin https://git.shuiditech.com/luban-components/${projecName}.git`, { cwd: builds.distDir }, () => {
-      process.exec('git pull origin master --allow-unrelated-histories', { cwd: builds.distDir }, () => {
-        process.exec('git push --set-upstream origin master', { cwd: builds.distDir }, () => {
-          callback()
-        })
-      })
-    })
-  },
-  // 检查目录是否存在
-  existOrNot: (path) => {
-    return new Promise((resolve, reject) => {
-      fs.stat(path, async (err, stat) => {
-        if (err) {
-          resolve(false)
-        } else {
-          resolve(true)
-        }
-      })
-    })
+    builds.start()
   },
   start: async () => {
     let config

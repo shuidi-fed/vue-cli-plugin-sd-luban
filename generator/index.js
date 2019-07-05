@@ -1,3 +1,5 @@
+const process = require('child_process')
+
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
@@ -57,5 +59,8 @@ module.exports = (api, options, rootOptions) => {
     delete files['src/main.js']
     delete files['src/App.vue']
     delete files['src/assets/logo.png']
+  }),
+  api.onCreateComplete(() => {
+    process.execSync('git config --local user.email "jiwenbing88@126.com" && git config --local user.name "luban"', { cwd: api.resolve('./') })
   })
 }
