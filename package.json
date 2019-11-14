@@ -1,20 +1,9 @@
 {
-  "name": "vue-cli-plugin-sd-luban",
-  "version": "0.0.40",
+  "name": "@sd/vue-cli-plugin-sd-luban",
+  "version": "0.0.41",
   "description": "vue cli plugin for sd luban",
   "main": "index.js",
   "repository": "git@git.shuiditech.com:frontend/luban/vue-cli-plugin-sd-luban.git",
   "author": "jiwenbing",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^2.4.2",
-    "shelljs": "^0.8.3",
-    "webpack": "^4.29.0"
-  },
-  "devDependencies": {
-    "axios": "^0.18.0",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
-    "qs": "^6.6.0"
-  }
+  "license": "MIT"
 }

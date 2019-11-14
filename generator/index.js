@@ -2,8 +2,8 @@ const process = require('child_process')
 
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
-  api.extendPackage({
-    name: '@sd-luban/XXX',
+  let packageJson = {
+    name: `@sd-luban/${rootOptions.projectName}`,
     private: false,
     scripts: {
       "build": "node ./.bin/build.js",
@@ -13,13 +13,12 @@ module.exports = (api, options, rootOptions) => {
       "axios": "^0.18.0",
       "lodash": "^4.17.11",
       "qs": "^6.6.0",
-      "child_process": "^1.0.2",
       "cos-nodejs-sdk-v5": "^2.5.6",
-      "puppeteer-cn": "^0.1.8",
     },
     devDependencies: {
+      "puppeteer": "^2.0.0",
       "less": "^3.0.4",
-      "less-loader": "^4.1.0",
+      "less-loader": "^5.0.0"
     },
     main: "./src/index.js",
     eslintConfig: {
@@ -43,8 +42,16 @@ module.exports = (api, options, rootOptions) => {
       }
     },
     "eslintIgnore": ["src/styles/*"],
-  })
-  console.log(options, rootOptions)
+  }
+  // 判断是否依赖sd-account和sd-ajax
+  options.use.forEach(item => options[item] = true)
+  if (options.sdAccount) {
+    packageJson.devDependencies['sd-account'] = '6.1.29'
+  }
+  if (options.sdAjax) {
+    packageJson.devDependencies['sd-ajax'] = '^0.5.10'
+  }
+  api.extendPackage(packageJson)
   api.render('./templates/', {
     options,
     rootOptions

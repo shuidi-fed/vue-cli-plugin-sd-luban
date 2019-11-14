@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: 'common-image',
+  name: '<%=rootOptions.projectName%>',
   props: {
     data: {
       type: Object,

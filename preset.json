@@ -1,0 +1,18 @@
+{
+  "useConfigFiles": false,
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-eslint": {
+      "config": "standard",
+      "lintOn": [
+        "save",
+        "commit"
+      ]
+    },
+    "vue-cli-plugin-sd-eslint": {}
+  },
+  "router": false,
+  "routerHistoryMode": true,
+  "vuex": false,
+  "cssPreprocessor": "less"
+}
