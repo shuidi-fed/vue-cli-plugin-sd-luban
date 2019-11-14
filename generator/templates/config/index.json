@@ -1,5 +1,5 @@
 {
-  "name": "@sd-luban/common-image",
+  "name": "@sd-luban/<%=rootOptions.projectName%>",
   "bizType": 1,
   "description": "图片",
   "data": {

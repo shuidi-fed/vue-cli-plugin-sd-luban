@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <common-image :data="data"></common-image>
+    <<%=rootOptions.projectName%> :data="data"></<%=rootOptions.projectName%>>
   </div>
 </template>
 <script>
