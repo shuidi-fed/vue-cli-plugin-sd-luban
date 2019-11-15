@@ -6,8 +6,8 @@ module.exports = (api, options, rootOptions) => {
     name: `@sd-luban/${rootOptions.projectName}`,
     private: false,
     scripts: {
-      "build": "node ./.bin/build.js",
-      "upload": "node ./.bin/publish.js",
+      "build": "luban-publisher build",
+      "upload": "luban-publisher upload",
     },
     dependencies: {
       "axios": "^0.18.0",
@@ -18,7 +18,8 @@ module.exports = (api, options, rootOptions) => {
     devDependencies: {
       "puppeteer": "^2.0.0",
       "less": "^3.0.4",
-      "less-loader": "^5.0.0"
+      "less-loader": "^5.0.0",
+      "@sd/luban-publisher": "^0.1.0"
     },
     main: "./src/index.js",
     license: "MIT",
