@@ -21,6 +21,7 @@ module.exports = (api, options, rootOptions) => {
       "less-loader": "^5.0.0"
     },
     main: "./src/index.js",
+    license: "MIT",
     eslintConfig: {
       "root": true,
       "env": {
@@ -47,6 +48,7 @@ module.exports = (api, options, rootOptions) => {
   options.use.forEach(item => options[item] = true)
   if (options.sdAccount) {
     packageJson.devDependencies['sd-account'] = '6.1.29'
+    packageJson.devDependencies['babel-polyfill'] = '^6.26.0'
   }
   if (options.sdAjax) {
     packageJson.devDependencies['sd-ajax'] = '^0.5.10'
