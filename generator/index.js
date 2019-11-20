@@ -8,18 +8,13 @@ module.exports = (api, options, rootOptions) => {
     scripts: {
       "build": "luban-publisher build",
       "upload": "luban-publisher upload",
+      "unpublish": "luban-publisher unpublish"
     },
-    dependencies: {
-      "axios": "^0.18.0",
-      "lodash": "^4.17.11",
-      "qs": "^6.6.0",
-      "cos-nodejs-sdk-v5": "^2.5.6",
-    },
+    dependencies: {},
     devDependencies: {
-      "puppeteer": "^2.0.0",
       "less": "^3.0.4",
       "less-loader": "^5.0.0",
-      "@sd/luban-publisher": "^0.1.0"
+      "@sd/luban-publisher": "^0.1.1"
     },
     main: "./src/index.js",
     license: "MIT",
