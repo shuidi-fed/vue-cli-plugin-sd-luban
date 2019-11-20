@@ -5,17 +5,13 @@ import component from '../src/index'
 <% if (options.sdAccount) { %>
 // 文档：https://wiki.shuiditech.com/pages/viewpage.action?pageId=207684729
 import account from 'sd-account'
-<% } %>
-<% if (options.sdAjax) { %>
+<% } %><% if (options.sdAjax) { %>
 // 文档：https://wiki.shuiditech.com/pages/viewpage.action?pageId=94110028
 import { createAxios, setAjaxDebugState } from 'sd-ajax'
-<% } %>
-
-<% if (options.sdAccount) { %>
+<% } %><% if (options.sdAccount) { %>
 Vue.use(account, { userThirdScope: 'base', thirdType: 17 })
 Vue.sdAccount.login({ url: window.location.href })
-<% } %>
-<% if (options.sdAjax) { %>
+<% } %><% if (options.sdAjax) { %>
 // 开启调试
 setAjaxDebugState(true)
 const API = createAxios({
@@ -27,7 +23,6 @@ const API = createAxios({
 }, {})
 Vue.prototype.$api = API
 <% } %>
-
 Vue.use(component)
 
 /* eslint-disable no-new */

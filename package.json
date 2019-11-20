@@ -3,7 +3,7 @@
   "version": "0.0.41",
   "description": "vue cli plugin for sd luban",
   "main": "index.js",
-  "repository": "git@git.shuiditech.com:frontend/luban/vue-cli-plugin-sd-luban.git",
+  "repository": "git@github.com:shuidi-fed/vue-cli-plugin-sd-luban.git",
   "author": "jiwenbing",
   "license": "MIT"
 }
