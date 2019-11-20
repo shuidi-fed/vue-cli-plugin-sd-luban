@@ -1,5 +1,5 @@
 {
-  "name": "@sd/vue-cli-plugin-sd-luban",
+  "name": "vue-cli-plugin-sd-luban",
   "version": "0.0.41",
   "description": "vue cli plugin for sd luban",
   "main": "index.js",
