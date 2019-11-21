@@ -4,7 +4,7 @@ module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   let packageJson = {
     name: `@sd-luban/${rootOptions.projectName}`,
-    private: false,
+    private: true,
     scripts: {
       "build": "luban-publisher build",
       "upload": "luban-publisher upload",
