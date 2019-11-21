@@ -14,7 +14,7 @@ module.exports = (api, options, rootOptions) => {
     devDependencies: {
       "less": "^3.0.4",
       "less-loader": "^5.0.0",
-      "@sd/luban-publisher": "^0.1.1"
+      "@sd/luban-publisher": "^0.1.2"
     },
     main: "./src/index.js",
     license: "MIT",
