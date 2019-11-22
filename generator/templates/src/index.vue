@@ -13,6 +13,7 @@ const API = createAxios({
     'Content-Type': 'application/x-www-form-urlencoded' // default
   }
 }, {})
+console.log(API)
 <% } %>
 export default {
   name: '<%=rootOptions.projectName%>',
