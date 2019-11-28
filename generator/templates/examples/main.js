@@ -1,4 +1,4 @@
-import 'babel-polyfill'
+<% if (options.sdAccount) { %>import 'babel-polyfill'<% } %>
 import Vue from 'vue'
 import App from './App'
 import component from '../src/index'
