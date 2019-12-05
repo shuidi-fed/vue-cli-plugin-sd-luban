@@ -8,6 +8,9 @@ module.exports = [{
   }, {
     name: 'sd-ajax',
     value: 'sdAjax'
+  }, {
+    name: 'postcss-pxtorem',
+    value: 'pxtorem'
   }],
   default: []
 }]

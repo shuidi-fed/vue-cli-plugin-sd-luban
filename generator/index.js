@@ -49,6 +49,9 @@ module.exports = (api, options, rootOptions) => {
   if (options.sdAjax) {
     packageJson.devDependencies['sd-ajax'] = '^0.5.10'
   }
+  if (options.pxtorem) {
+    packageJson.devDependencies['postcss-pxtorem'] = '^4.0.1'
+  }
   api.extendPackage(packageJson)
   api.render('./templates/', {
     options,

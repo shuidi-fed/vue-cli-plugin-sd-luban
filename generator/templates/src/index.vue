@@ -23,6 +23,12 @@ export default {
       default: () => {}
     }
   },
+  <% if (options.pxtorem) { %>
+  mounted () {
+    this.setRem()
+    window.onresize = this.setRem
+  },
+  <% } %>
   methods: {
     /**
      * 鲁班保存项目之前，会先调用此方法
@@ -33,6 +39,14 @@ export default {
       // return 'msg'
       return ''
     },
+    <% if (options.pxtorem) { %>
+    // 改变窗口大小时重新设置 rem
+    setRem() {
+      const htmlWidth = document.documentElement.clientWidth || document.body.clientWidth
+      const htmlDom = document.getElementsByTagName('html')[0]
+      htmlDom.style.fontSize = htmlWidth / (750 / 32) + 'px'
+    },
+    <% } %>
     toLink() {
       if (!this.data.href) return
       window.location.href = this.data.href
