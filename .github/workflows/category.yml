@@ -1,0 +1,12 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get category list
+      run: |
+        crul --header "Content-Type:application/json" 'https://luban.shuiditech.com/' > ./filename.json
