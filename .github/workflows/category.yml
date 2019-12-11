@@ -6,8 +6,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
     steps:
     - name: Get category list
       run: |
-        sudo apt install -y curl
-        crul --header "Content-Type:application/json" 'https://luban.shuiditech.com/' > ./filename.json
+        curl --header "Content-Type:application/json" 'https://luban.shuiditech.com/' > ./filename.json
