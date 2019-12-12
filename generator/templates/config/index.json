@@ -1,7 +1,9 @@
 {
   "name": "@sd-luban/<%=rootOptions.projectName%>",
-  "bizType": 1,
-  "description": "图片",
+  "bizType": <%=options.bizType || 1%>,
+  "isPublic": <%=options.isBiz ? 0 : 1%>,
+  "category": <%=options.category%>,
+  "description": "<%=options.name%>",
   "data": {
     "src": "http://cf-images.oss-cn-shanghai.aliyuncs.com/logo.png",
     "style": {

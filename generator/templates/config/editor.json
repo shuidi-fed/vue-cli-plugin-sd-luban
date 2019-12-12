@@ -1,6 +1,6 @@
 [
   {
-    "blockName": "图片基本设置",
+    "blockName": "<%=options.name%>基本设置",
     "settings": {
       "src": {
         "type": "input",
