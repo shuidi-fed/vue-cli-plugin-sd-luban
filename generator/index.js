@@ -8,6 +8,7 @@ module.exports = (api, options, rootOptions) => {
     scripts: {
       "build": "luban-publisher build",
       "upload": "luban-publisher upload",
+      "upload-test": "luban-publisher upload -t",
       "unpublish": "luban-publisher unpublish"
     },
     dependencies: {},
