@@ -1,7 +1,7 @@
 <% if (options.sdAccount) { %>import 'babel-polyfill'<% } %>
 import Vue from 'vue'
 import App from './App'
-import Utils from './utils'
+import Utils from '../utils'
 import component from '../src/index'
 <% if (options.sdAccount) { %>
 // 文档：https://wiki.shuiditech.com/pages/viewpage.action?pageId=207684729
