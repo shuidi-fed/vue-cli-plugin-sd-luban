@@ -44,7 +44,7 @@ module.exports = (api, options, rootOptions) => {
   // 判断是否依赖sd-account和sd-ajax
   options.use.forEach(item => options[item] = true)
   if (options.sdAccount) {
-    packageJson.devDependencies['sd-account'] = '6.1.29'
+    packageJson.devDependencies['sd-account'] = '6.3.0'
     packageJson.devDependencies['babel-polyfill'] = '^6.26.0'
   }
   if (options.sdAjax) {
