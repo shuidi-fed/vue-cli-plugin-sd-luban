@@ -17,6 +17,9 @@ module.exports = [{
     name: 'sd-ajax',
     value: 'sdAjax'
   }, {
+    name: 'sd-data',
+    value: 'sdData'
+  }, {
     name: 'postcss-pxtorem',
     value: 'pxtorem'
   }],
