@@ -49,7 +49,8 @@ export default {
     <% } %>
     toLink() {
       if (!this.data.href) return
-      window.location.href = this.data.href
+      // 使用提供的方法跳转，支持按页码跳转
+      this.$Utils.href(this.data.href)
     }
   }
 }
